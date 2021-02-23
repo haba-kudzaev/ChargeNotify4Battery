@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<color name="colorAppIconBackground">#FFFFFFFF</color>
+	<color name="colorIcon">?android:attr/colorAccent</color>
+	
+	<style 
+		name="AppTheme" 
+		parent="@android:style/Theme.DeviceDefault.Light.Dialog"/>
+		
+	<style 
+		name="AppTheme.PackagesList" 
+		parent="@android:style/Theme.DeviceDefault.Light"/>
+	
+</resources>
+
