@@ -1,5 +1,5 @@
-package ru.rx1310.app.cn4b;
- 
+package ru.rx1310.app.cn4b.activities;
+
 import android.annotation.NonNull;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,41 +12,41 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import ru.rx1310.app.cn4b.R;
 
-public class MainActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener { 
-     
+public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener { 
+
 	ListView mListView;
 	SharedPreferences mSharedPrefs;
 	SharedPreferences.Editor mSharedPrefsEditor;
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		
+
 		// Загрузка разметки
         addPreferencesFromResource(R.layout.activity_main);
-        
+
 		// Настройка SharedPrefs
 		mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 		mSharedPrefs.registerOnSharedPreferenceChangeListener(this);
 		mSharedPrefsEditor = mSharedPrefs.edit();
-		
+
 		// Убираем разделители между prefs
 		mListView = findViewById(android.R.id.list);
 		mListView.setDivider(null);
-		
+
 		// Настройка ActionBar'a
 		getActionBar().setDisplayHomeAsUpEnabled(true); // In `OnCreate();`
 		getActionBar().setHomeButtonEnabled(true);
-		
+
     }
-	
+
 	// Обработка нажатий на prefs
 	public boolean onPreferenceTreeClick(PreferenceScreen prefScreen, Preference pref) {
 
 		switch (pref.getKey()) {
 
 			case "":
-				
+
 				break;
 
 			default: break;
@@ -66,28 +66,28 @@ public class MainActivity extends PreferenceActivity implements SharedPreference
 		 }*/
 
 	}
-	
+
 	// Обработка нажатия кнопки Back в ActionBar
 	@Override 
 	public boolean onNavigateUp() { 
 		finish(); 
 		return true; 
 	}
-	
+
 	// Создаю меню
 	@Override
     public boolean onCreateOptionsMenu(Menu mMenu) {
-		
+
         getMenuInflater().inflate(R.menu.main, mMenu);
-		
+
         return super.onCreateOptionsMenu(mMenu);
-		
+
     }
-	
+
 	// Обработка нажатий пунктов в меню
 	@Override
     public boolean onOptionsItemSelected(@NonNull MenuItem mMenuItem) {
-		
+
         switch (mMenuItem.getItemId()){
 
             case R.id.test:
@@ -95,9 +95,9 @@ public class MainActivity extends PreferenceActivity implements SharedPreference
                 break;
 
         }
-		
+
         return super.onOptionsItemSelected(mMenuItem);
-		
+
     }
-	
+
 } 

@@ -8,8 +8,8 @@ android {
         applicationId "ru.rx1310.app.cn4b"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 210224
+        versionName "1"
     }
 
     buildTypes {

@@ -2,23 +2,46 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.rx1310.app.cn4b">
+	
+	<original-package android:name="ru.rx1310.app.cn4b" />
+
+    <supports-screens 
+        android:anyDensity="true" 
+        android:largeScreens="true" 
+        android:normalScreens="true" 
+        android:resizeable="true" 
+        android:smallScreens="true" 
+        android:xlargeScreens="true" />
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher" 
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name" 
         android:theme="@style/AppTheme"
-        android:resizeableActivity="true">
+        android:allowBackup="true"
+        android:supportsRtl="false">
+		
+		<activity
+			android:label="@string/app_name" 
+			android:name=".activities.SettingsActivity">
+			
+			<intent-filter>
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+				<action android:name="android.intent.action.APPLICATION_PREFERENCES"/>
+				<action android:name="android.intent.action.VIEW"/>
+                <!--action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" /-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+				<category android:name="android.intent.category.PREFERENCE" />
+				<category android:name="com.cyanogenmod.category.LAUNCHER_PREFERENCES"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				
             </intent-filter>
-        </activity>
+			
+		</activity>
 
         <meta-data
           android:name="android.max_aspect"
